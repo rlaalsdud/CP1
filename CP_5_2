@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class CP_1_5_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in);
+		int n = 0;
+		double x;
+		double y;
+
+		System.out.println("<< Sine 값 출력 프로그램을 시작합니다 >>\n");
+		while(n < 180) {
+			if(n < 0) {
+				System.out.println("프로그램을 종료합니다.");
+			}
+			else {
+				n++;
+				x = (double)n * (3.141592 / 180.0);
+				y = Math.sin(x);
+
+				System.out.println("sin("+n+"도) 는"+ y +"입니다.");
+			}
+		}
+		System.out.println("\n<< Sine 값 출력 프로그램을 종료합니다 >>");
+		scanner.close();
+	}
+
+}
