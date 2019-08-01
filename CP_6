@@ -1,0 +1,58 @@
+
+public class CP_1_6 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int degree=1;
+		double radian=0;
+		double sineValue;
+		int numberOfAsterisks;
+
+
+		while(0 < degree && degree < 180) {
+			radian=((double)degree/180.0)*3.141592;
+			sineValue= mySine(radian);
+			numberOfAsterisks = (int)((sineValue*40.0)+0.5);
+
+			if(degree <10) {
+				System.out.print("sine(00"+degree+"도): ");
+			}
+			else if(degree <100) {
+				System.out.print("sine(0"+degree+"도): ");
+			}
+			else {
+				System.out.print("sine("+degree+"도): ");
+			}
+			printAsterisks(numberOfAsterisks);
+			System.out.println();
+			degree=degree+5;
+		}
+
+	}
+
+	private static void printAsterisks(int n) {
+		int i = 0;
+		while(i < n) {
+			System.out.print("*");
+			i++;
+		}
+		
+	}
+
+	private static double mySine(double x) {
+		double xSquare = x * x;
+		double currentTerm = x;
+		int n = 2;
+		double sineValue = currentTerm;
+		
+		while(Math.abs(currentTerm) >= 0.0000001) {
+			currentTerm = -currentTerm*xSquare/(double)(n*(n+1));
+			sineValue = sineValue+currentTerm;
+			n=n+2;
+		}
+		return sineValue;
+
+	}
+
+	}
