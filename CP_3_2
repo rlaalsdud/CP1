@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class CP_1_3_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner aScanner = new Scanner(System.in);
+		
+		System.out.println("1부터 N까지의 합계를 구하려고 합니다. N값을 입력하십시요.");
+		
+		int n = aScanner.nextInt();
+		int sum = 0;
+		int count = 1;		
+
+		while(count <= n) {
+			sum = sum + count;
+			count += 1;
+		}
+		aScanner.close();
+
+		System.out.println("sum is "+sum);
+	}
+
+}
