@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+public class CP_1_5_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in);
+		int score;
+		int numberOfStudents; //총 학생 수
+		int sumOfScore; //총 점수
+		double average; //평균
+		char grade ='\0'; //null
+		int numberA=0;
+		int numberB=0;
+		int numberC=0;
+		int numberD=0;
+		int numberF=0;
+
+		System.out.println("<< 성적 처리 프로그램을 시작합니다 >>\n");
+
+		numberOfStudents = 0;
+		sumOfScore = 0;
+		System.out.print("성적을 입력하시오: ");
+		score = scanner.nextInt();
+		while(score >= 0) {
+			if(score > 100) {
+				System.out.println("오류: 최대 점수 100을 넘었습니다.\n");
+			}
+			else {
+				numberOfStudents = numberOfStudents+1;
+				sumOfScore = sumOfScore + score;
+				if(score >=90 && score <=100) {
+					grade = 'A';
+					numberA++;
+				}
+				else if(score >=80 && score <=89) {
+					grade = 'B';
+					numberB++;
+				}
+				else if(score >=70 && score <=79) {
+					grade = 'C';
+					numberC++;
+				}
+				else if(score >=60 && score <=69) {
+					grade = 'D';
+					numberD++;
+				}
+				else if(score >=0 && score <=59) {
+					grade = 'F';
+					numberF++;
+				}
+				System.out.println("  (성적:" + score + ",학점:" + grade + ")");
+			}
+			System.out.print("성적을 입력하시오: ");
+			score = scanner.nextInt();
+		}
+	
+	average = (double)sumOfScore / (double)numberOfStudents;
+	System.out.println("\n학생수는" + numberOfStudents + "입니다.");
+	System.out.println("A는 " + numberA + "명 입니다.");
+	System.out.println("B는 " + numberB + "명 입니다.");
+	System.out.println("C는 " + numberC + "명 입니다.");
+	System.out.println("D는 " + numberD + "명 입니다.");
+	System.out.println("F는 " + numberF + "명 입니다.");
+	System.out.println("평균은 " + average + "입니다.");
+	System.out.println("\n<< 성적 처리 프로그램을 종료합니다 >>");
+	}
+}
+
+
