@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class CP_1_4_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner aScanner = new Scanner(System.in);
+		int userAnswer;
+		int givenN;
+		int fact;
+
+		System.out.println("Factorial을 계산하시겠습니까?");
+		System.out.print("계산하시려면 'Y'를 치십시오: ");
+		userAnswer = aScanner.next().charAt(0);
+		while(userAnswer == 'Y' || userAnswer == 'y') {
+			System.out.print("N값을 입력하시오: ");
+			givenN = aScanner.nextInt();
+			if(givenN < 0) {
+				System.out.println("입력이 음수이므로, Factorial값을 계산살 수 없습니다.");
+			}
+			else {
+				if(givenN == 0) {
+					fact = 1;
+				}
+				else {
+					int i = 1;
+					fact = 1;
+					while(i <= givenN) {
+						fact = fact * i;
+						i  = i + 1;
+					}
+				}
+				System.out.println(givenN + "Factorial의 값은 " + fact + "입니다.");
+			}
+			System.out.println();
+			System.out.println("Factorial을 계산하시겠습니까?");
+			System.out.print("계산하시려면 'Y'를 치십시오: ");
+			userAnswer = aScanner.next().charAt(0);
+		}
+		aScanner.close();
+	}
+
+}
